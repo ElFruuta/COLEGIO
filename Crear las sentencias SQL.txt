@@ -1,0 +1,63 @@
+1)
+	SELECT * FROM colegios;
+
+	SELECT * FROM cursos;
+
+	SELECT * FROM profesores;
+
+	SELECT * FROM materias;
+
+	SELECT * FROM cursos_materias;
+
+	SELECT * FROM profesores_materias;
+
+	SELECT * FROM alumnos;
+
+	SELECT * FROM notas;
+
+
+2)
+	SELECT * FROM colegios WHERE id_colegio = 1;
+
+	SELECT * FROM cursos WHERE id_curso = 1;
+
+	SELECT * FROM profesores WHERE rut_profesor = 1;
+
+	SELECT * FROM materias WHERE id_materia = 1;
+
+	SELECT * FROM cursos_materias WHERE id_curso_materia = 1;
+
+	SELECT * FROM profesores_materias WHERE id_profesor_materia = 1;
+
+	SELECT * FROM alumnos WHERE rut_alumno = 1;
+
+	SELECT * FROM notas WHERE id_nota = 1;
+
+
+3)
+	INSERT INTO colegios (nombre, direccion) VALUES ('AML', 'Aníbal Zañartu 9657, 8880104 San Ramón, Región Metropolitana');
+
+	INSERT INTO cursos (nombre, id_colegio) VALUES ('IV°B', 1);
+
+	INSERT INTO profesores (rut_profesor, nombre, apellido, id_colegio) VALUES (218427502, 'Yastin', 'Villarroel', 1);
+
+	INSERT INTO materias (nombre) VALUES ('Programación Orientada a Objetos');
+
+	INSERT INTO cursos_materias (id_curso, id_materia) VALUES (1, 1);
+
+	INSERT INTO profesores_materias (rut_profesor, id_materia) VALUES (218427502, 1);
+
+	INSERT INTO alumnos (rut_alumno, nombre, apellido, id_curso) VALUES (221535421, 'Renato', 'Fox', 1);
+
+	INSERT INTO notas (resultado, rut_alumno, id_materia) VALUES (6.9, 221535421, 1);
+
+
+4)
+	 DELETE id_nota, resultado, rut_alumno, id_materia FROM notas;
+DELETE rut_alumno, nombre, apellido, id_curso FROM alumnos;
+DELETE id_curso, nombre, id_colegio FROM cursos;
+DELETE id_materia, nombre FROM materias;
+DELETE rut_profesor, nombre, apellido, id_colegio FROM profesores;
+DELETE id_curso_materia, id_curso, id_materia FROM cursos_materias;
+DELETE id_profesor_materia, rut_profesor, id_materia FROM profesores_materias;
+DELETE id_colegio, nombre, direccion FROM colegios;
