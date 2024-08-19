@@ -15,8 +15,8 @@ class Colegios:
         return query
 
     @classmethod
-    def insert_values(cls, nombre, direccion):
-        query = f"INSERT INTO colegios (nombre, direccion) VALUES ('{nombre}', '{direccion}')"
+    def insert_values(cls, data):
+        query = f"INSERT INTO colegios (nombre, direccion) VALUES ('{data['nombre']}', '{data['direccion']}')"
         return query
 
     @classmethod
@@ -42,8 +42,8 @@ class Cursos:
         return query
 
     @classmethod
-    def insert(cls, nombre, id_colegio):
-        query = f"INSERT INTO cursos (nombre, id_colegio) VALUES ('{nombre}', {id_colegio})"
+    def insert(cls, data):
+        query = f"INSERT INTO cursos (nombre, id_colegio) VALUES ('{data['nombre']}', {data['id_colegio']})"
         return query
 
     @classmethod
@@ -69,8 +69,8 @@ class CursosMaterias:
         return query
 
     @classmethod
-    def insert(cls, id_curso, id_materia):
-        query = f"INSERT INTO cursos_materias (id_curso, id_materia) VALUES ({id_curso}, {id_materia})"
+    def insert(cls, data):
+        query = f"INSERT INTO cursos_materias (id_curso, id_materia) VALUES ({data['id_curso']}, {data['id_materia']})"
         return query
 
     @classmethod
@@ -97,8 +97,8 @@ class Alumnos:
         return query
 
     @classmethod
-    def insert(cls, rut_alumno, nombre, apellido, id_curso):
-        query = f"INSERT INTO alumnos (rut_alumno, nombre, apellido, id_curso) VALUES ({rut_alumno}, '{nombre}', '{apellido}', {id_curso})"
+    def insert(cls, data):
+        query = f"INSERT INTO alumnos (rut_alumno, nombre, apellido, id_curso) VALUES ({data['rut_alumno']}, '{data['nombre']}', '{data['apellido']}', {data['id_curso']})"
         return query
 
     @classmethod
@@ -125,8 +125,8 @@ class Profesores:
         return query
 
     @classmethod
-    def insert(cls, rut_profesor, nombre, apellido, id_colegio):
-        query = f"INSERT INTO profesores (rut_profesor, nombre, apellido, id_colegio) VALUES ({rut_profesor}, '{nombre}', '{apellido}', {id_colegio})"
+    def insert(cls, data):
+        query = f"INSERT INTO profesores (rut_profesor, nombre, apellido, id_colegio) VALUES ({data['rut_profesor']}, '{data['nombre']}', '{data['apellido']}', {data['id_colegio']})"
         return query
 
     @classmethod
@@ -177,8 +177,8 @@ class ProfesoresMaterias:
         return query
 
     @classmethod
-    def insert(cls, rut_profesor, id_materia):
-        query = f"INSERT INTO profesores_materias (rut_profesor, id_materia) VALUES ({rut_profesor}, {id_materia})"
+    def insert(cls, data):
+        query = f"INSERT INTO profesores_materias (rut_profesor, id_materia) VALUES ({data['rut_profesor']}, {data['id_materia']})"
         return query
 
     @classmethod
@@ -205,8 +205,8 @@ class Notas:
         return query
 
     @classmethod
-    def insert(cls, resultado, rut_alumno, id_materia):
-        query = f"INSERT INTO notas (resultado, rut_alumno, id_materia) VALUES ({resultado}, {rut_alumno}, {id_materia})"
+    def insert(cls, data):
+        query = f"INSERT INTO notas (resultado, rut_alumno, id_materia) VALUES ({data['resultado']}, {data['rut_alumno']}, {data['id_materia']})"
         return query
 
     @classmethod
